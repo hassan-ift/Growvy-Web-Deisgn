@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs</title>
+    <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+
+
+
+
+
+<style>
+
+
+        
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+/* Hero Section */
+        .jobs-hero {
+            background:  #D7F2DA;
+            color:black;
+           border-bottom: 1px solid #ccc;
+      border-radius: 0 0 100px 100px / 50px;
+      text-align: center;
+        }
+        
+        .jobs-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .jobs-hero p {
+            font-size: 1.4rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        /* Job Categories */
+        .job-categories {
+            background: white;
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #718096;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            border-color: #3498db;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+        
+        .category-icon i {
+            font-size: 36px;
+            color: #3498db;
+        }
+        
+        .category-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        /* Job Seeker Community */
+        .job-seeker-community {
+            background: #fcfafa;
+            color: black;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .community-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .community-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .community-container p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+        
+        .signin-btn {
+            display: inline-block;
+            background: #1fd607;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .signin-btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        /* Top Jobs Section */
+        .top-jobs {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .job-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #3498db;
+        }
+        
+        .job-card h3 {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .apply-btn {
+            display: inline-block;
+            background: #1fd607;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .apply-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+ .job-seeker-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            border-top: 5px solid #3498db;
+        }
+        
+       
+        
+
+        
+        .job-seeker-card h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .job-seeker-card p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .jobs-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .jobs-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="">
+                    <i class=""></i>
+                 
+                </div>
+                <ul class="nav-links">
+                    <li><a href="home.html" class="active">Home</a></li>
+     <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="success.html">Success</a></li>
+       <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+
+
+
+ <section class="jobs-hero">
+        <div class="container">
+            <h1>Jobs</h1>
+            <p>Join our team and shape the future—explore exciting career opportunities today!</p>
+        </div>
+    </section>
+
+    <!-- Job Categories Section -->
+    <section class="job-categories">
+        <div class="container">
+            <div class="section-title">
+               
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Tech</h3>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Management</h3>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Human Resource</h3>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Marketing & Sales</h3>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Accounts & Finance</h3>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Customer Service</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Seeker Community Section -->
+    <section class="job-seeker-community">
+        <div class="container">
+            <div class="community-container">
+                <h2>Join Growvy's 50M+ Job Seeker Community & Get Hired Faster!</h2>
+                <p>Build your profile, get noticed by top employers, and access exclusive job opportunities tailored to your skills. Your next career move starts here!</p>
+                <a href="#" class="signin-btn">Sign In</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Jobs Section -->
+    <section class="top-jobs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top Jobs</h2>
+              
+            </div>
+            
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <h3>Business Developer</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Finance Manager</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Human Resource Manager</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Software Engineer</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Web Developer</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Graphic Designer / UI / UX</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>SEO Expert</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Android Developer</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Floor Manager</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Sales Representative</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Data Entry Operator</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Delivery Man</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Urdu / English Call Center Agent</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Morning Shift Jobs for Females</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+                
+                <div class="job-card">
+                    <h3>Accountant</h3>
+                    <a href="#" class="apply-btn">Apply Now</a>
+                </div>
+            </div>
+        </div>
+      
+
+     <!-- Job Seeker Community Section -->
+    <section class="job-seeker-community">
+        <div class="container">
+            <div class="community-container">
+                <h2>I'm a Job Seeker!</h2>
+                <p> <br>Looking for job according to my </br> skills and requirements.</p>
+                <a href="#" class="signin-btn">Jobs</a>
+            </div>
+        </div>
+    </section>
+
+   <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                  <h1>Growvy</h1>
+                    <p>Optimise your buisness with smart </br> asset management , growth <br> strategies and cutting-edge </br> solutions to boost sales and <br> efficiency with Growvy! </br></p>
+                    <div class="social-links">
+                        <a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+
+                        <a href="www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Plans and Pricing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Buisness Solutions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Success Stories</a></li>
+                         <li><a href="#"><i class="fas fa-chevron-right"></i> Jobs</a></li>
+                    </ul>
+                 <div class="stars">★★★★★</div>
+                </div>
+                
+                
+                
+
+            </div>
+            
+          
+        </div>
+  
+    </footer>
+
+
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .stat-item');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect();
+                if (position.top < window.innerHeight - 100) {
+                    el.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script> 
+</body>
+</html>
+
+
+  
+
+ 

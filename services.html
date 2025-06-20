@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+            
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #4f46e5;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --border-radius: 12px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: transparent;
+            box-shadow: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+            background-color: #eff6ff;
+        }
+
+        .nav-menu a.active {
+            color: var(--primary);
+            background-color: #dbeafe;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #D7F2DA;
+            color:black;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+      border-radius: 0 0 100px 100px / 50px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            background:black;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: black;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 60px 0 100px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow:white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: white;
+        }
+
+        .card-icon {
+            height: 180px;
+            background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-icon i {
+            font-size: 64px;
+            color: var(--primary);
+        }
+
+        .card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: black;
+        }
+
+        .card-content p {
+            color: black;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color:  #14f000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .btn:hover {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color:white;
+            color: rgb(0, 0, 0);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-col p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #334155;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .nav-menu {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-menu li {
+                margin: 5px 10px;
+            }
+            
+            .hero {
+                padding: 60px 0 30px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-menu li {
+                margin: 5px 0;
+            }
+
+.top-banner {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .banner-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .banner-content p {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+.hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        /* Problem/Solution Sections */
+        .solution-section {
+            padding: 80px 0;
+        }
+
+        .solution-container {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .problem-column {
+            flex: 1;
+            min-width: 300px;
+            padding: 50px;
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .solution-column {
+            flex: 1;
+            min-width: 300px;
+            padding: 50px;
+            background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .problem-column h2 {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .problem-column h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #dc2626;
+        }
+
+        .problem-column p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .solution-column h3 {
+            font-size: 24px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .solution-column p {
+            color: #334155;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+
+
+        }
+
+    </style>
+
+
+</head>
+<body>
+ <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="">
+                    <i class=""></i>
+                 
+                </div>
+                <ul class="nav-links">
+                    <li><a href="home.html" class="active">Home</a></li>
+     <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="success.html">Success</a></li>
+       <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+      
+<section class="hero">
+        <div class="container">
+            <h1> Services</h1>
+            <p>At Growvy, we provide innovative, cost-effective solutions to help businesses and professionals thrive.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Hiring Solutions</h3>
+                        <p>Access a vast talent pool to hire the right candidates quickly and affordably. Our platform connects you with top professionals tailored to your industry needs.</p>
+                        <a href="#" class="btn">View Plans</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>E-commerce Growth</h3>
+                        <p>Drive expansion with targeted strategies and market-driven solutions. We help optimize your online presence and maximize conversion rates.</p>
+                        <a href="#" class="btn">View Plans</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Business Optimization</h3>
+                        <p>Optimize and manage business resources with data-backed insights. Our analytics tools help you make informed decisions for sustainable growth.</p>
+                        <a href="#" class="btn">View Plans</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+<br>
+
+<section class="hero">
+        <div class="container">
+            <h1>Join over 10k users worldwide</h1>
+            <p></p>
+            <a href="#" class="banner-btn">View Pricing</a>
+        </div>
+    </section>
+
+    <!-- Hiring Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-container">
+                <div class="problem-column">
+                    <h2>Problems in Hiring</h2>
+                    <h3>High Costs, Low Quality</h3>
+                    <p>Companies spend high $$$ budgets on job portals like Indeed and LinkedIn, only to receive low-quality CVs and irrelevant applicants, making hiring slow and inefficient.</p>
+                </div>
+                <div class="solution-column">
+                    <h3>With Growvy Solution</h3>
+                    <p>With Growvy, businesses can access a database of active job seekers who have recently joined for job search. Use advanced filters to find the right candidates quickly and at a fraction of the cost—no wasted budget, just quality hires!</p>
+                    <a href="#" class="btn">Start Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-commerce Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-container">
+                <div class="problem-column">
+                    <h2>E-commerce Business</h2>
+                    <h3>Growth Challenges</h3>
+                    <p>E-commerce businesses struggle with high marketing costs, inefficient operations, and slow growth, making it difficult to scale and maximize profits.</p>
+                </div>
+                <div class="solution-column">
+                    <h3>With Growvy Solution</h3>
+                    <p>Growvy helps e-commerce businesses streamline operations, manage assets, and implement smart growth strategies to boost sales and efficiency—all at a low cost with proven results.</p>
+                    <a href="#" class="btn">Start Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <br>
+       
+      <section class="cta-section">
+            
+            <h1><p>Join over 10k users worldwide. Start scheduling in less than 1 minute.</p></h1>
+            <a href="#" class="btn">
+                <i class="fas fa-phone-alt"></i> Schedule Call Now
+            </a>
+        </section>
+
+
+
+    </br>
+
+
+
+</br>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                  <h1>Growvy</h1>
+                    <p>Optimise your buisness with smart </br> asset management , growth <br> strategies and cutting-edge </br> solutions to boost sales and <br> efficiency with Growvy! </br></p>
+                    <div class="social-links">
+                        <a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+
+                        <a href="www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Plans and Pricing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Buisness Solutions</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Success Stories</a></li>
+                         <li><a href="#"><i class="fas fa-chevron-right"></i> Jobs</a></li>
+                    </ul>
+                <div class="stars">★★★★★</div>
+                </div>
+                
+                
+                
+
+            </div>
+            
+          
+        </div>
+  
+    </footer>
+
+
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .stat-item');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect();
+                if (position.top < window.innerHeight - 100) {
+                    el.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
