@@ -316,7 +316,24 @@ display: flex;
             color: #718096;
             margin-bottom: 20px;
         }
-        
+.arrow-container {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      width: 70%;
+      height: auto;
+    }
+
+
+
+
+
+
+
 .stars {
       color: #1fd607;
       font-size: 50px;
